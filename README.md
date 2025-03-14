@@ -6,6 +6,12 @@ An unofficial Python client library for interacting with the [Sesame](https://ww
 
 Sesame is developing conversational AI with "voice presence" - the quality that makes spoken interactions feel real, understood, and valued. Their technology enables voice conversations with AI characters like Miles and Maya that feature emotional intelligence, natural conversational dynamics, and contextual awareness.
 
+## Support
+
+If you find this project helpful, consider buying me a coffee!
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow.svg)](https://buymeacoffee.com/ijub)
+
 ## Installation
 
 ```bash
@@ -268,3 +274,9 @@ Users of this library assume all legal responsibility for its use. The author(s)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you find this project helpful, consider buying me a coffee!
+
+<a href="https://buymeacoffee.com/ijub" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
