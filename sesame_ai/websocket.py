@@ -146,8 +146,16 @@ class SesameWebSocket:
                 self._handle_audio(data)
             elif message_type == 'call_disconnect_response':
                 self._handle_call_disconnect_response(data)
+            elif message_type == 'webrtc_config':
+                self._handle_webrtc_config(data)
+            elif message_type == 'chat':
+                self._handle_chat(data)
+            elif message_type == 'error':
+                self._handle_error(data)
+            elif message_type == 'agent':
+                self._handle_agent(data)
             else:
-                logger.debug(f"Received message type: {message_type}")
+                logger.debug(f"Received unknown message type: {message_type}")
                 
         except json.JSONDecodeError:
             logger.warning(f"Received non-JSON message: {message}")
@@ -236,6 +244,22 @@ class SesameWebSocket:
         # Call the disconnect callback if set
         if self.on_disconnect_callback:
             self.on_disconnect_callback()
+
+    def _handle_webrtc_config(self, data):
+        """Handle webrtc_config message from server"""
+        logger.debug(f"Received webrtc_config: {data}")
+
+    def _handle_chat(self, data):
+        """Handle chat message from server"""
+        logger.debug(f"Received chat message: {data}")
+
+    def _handle_error(self, data):
+        """Handle error message from server"""
+        logger.error(f"Received error from server: {data}")
+
+    def _handle_agent(self, data):
+        """Handle agent message from server"""
+        logger.debug(f"Received agent message: {data}")
     
     # Methods to send messages
     def _send_ping(self):
@@ -309,7 +333,7 @@ class SesameWebSocket:
                 "is_private": self.is_private,
                 "client_name": self.client_name,
                 "settings": {
-                    "preset": f"{self.character}"
+                    "character": f"{self.character}"
                 },
                 "client_metadata": {
                     "language": "en-US",
